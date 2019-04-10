@@ -19,6 +19,7 @@ componentDidMount() {
     console.log(r.urls.full)
     this.setState(state =>{this.state.pics.push(r.urls.full)})
  })
+ console.log(this.state.pics[Math.floor((Math.random() * 10))])
   })
  
   .catch(function (err) {
@@ -26,8 +27,11 @@ componentDidMount() {
   })
     } 
 
- handelClick= (event) => { this.state.url=this.state.pics[Math.floor((Math.random() * 10))]}
-
+ handelClick= (event) => { 
+   let x =this.state.pics[Math.floor((Math.random() * 10))]
+   alert("hiii")
+   this.setState({url:x})}
+ 
 render() {
   return (
   <img className="spinner" src="../img/spinner.svg" alt="spinner" onClick={this.handelClick} />
