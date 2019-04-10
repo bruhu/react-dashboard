@@ -2,9 +2,7 @@
   animation: spinner-spin infinite 5s linear;
   height: 10vmin;
   pointer-events: none;
-  
 }
-
 
 @keyframes spinner-spin {
   from {

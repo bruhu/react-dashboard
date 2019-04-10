@@ -13,8 +13,6 @@ class App extends Component {
          <Clock />
          <Memo />
        </header>
-         
-        
       </div>
     );
   }

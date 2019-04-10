@@ -6,17 +6,27 @@ export default class Umsplash extends Component {
 
   this.state = {
     pics: [],
+    url:"",
   };
 }
 componentDidMount() {
-  fetch("https://api.unsplash.com/photos/?client_id=f56e84ec83c1ab9bd834ea6234ecfaa6e93936a240359645e52a3cc3f44cb714")
-    .then((response) => {console.log(response.json())
-    this.setState(state => this.state.pics=response.url) 
-  }
-  )
+  fetch('https://api.unsplash.com/photos/?client_id=f56e84ec83c1ab9bd834ea6234ecfaa6e93936a240359645e52a3cc3f44cb714')
+    .then(response => {
+      return(response.json())
+  })
+  .then(res=>{
+    res.forEach(r=>{ 
+    console.log(r.urls.full)
+    this.setState(state =>{this.state.pics.push(r.urls.full)})
+ })
+  })
+ 
+  .catch(function (err) {
+    console.log("Something went wrong!", err)
+  })
     } 
 
- handelClick= (event) => { this.componentDidMount()}
+ handelClick= (event) => { this.state.url=this.state.pics[Math.floor((Math.random() * 10))]}
 
 render() {
   return (
