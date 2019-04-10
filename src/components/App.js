@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import Memo from "./Memo";
 import "./../assets/styles/App.css";
 import Clock from "./Clock";
+import Umsplash from "./Umsplash";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Clock />
-           <Memo />
+         <Umsplash />
+         <Clock />
+         <Memo />
+       </header>
          
-        </header>
+        
       </div>
     );
   }
