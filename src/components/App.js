@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import Memo from "./Memo";
-import "./../assets/styles/App.css";
-import Clock from "./Clock";
+import "../assets/styles/App.css"
 import Umsplash from "./Umsplash";
-import Img from "./Img";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-         <Umsplash>   </Umsplash> 
-         <Clock />
-         <Memo />
-       </header>
+        
+         <Umsplash className="App-header">  
+  
+         </Umsplash> 
+     
       </div>
     );
   }

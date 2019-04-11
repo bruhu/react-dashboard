@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import "../assets/styles/umsplash.css"
+
+import Memo from "./Memo";
+import Clock from "./Clock";
 export default class Umsplash extends Component {
    constructor(props) {
   super(props);
@@ -29,17 +32,15 @@ componentDidMount() {
 
  handelClick= (event) => { 
    this.setState({url:this.state.pics[Math.floor((Math.random() * this.state.pics.length))]})
-   const divStyle = {
-    backgroundImage: 'url(' + this.state.url + ')',
-  };
-  
   }
  
 render() {
-  return ( <div>
+  return ( <React.Fragment>
   <i className="fa fa-refresh fa-spin pointer" onClick={this.handelClick}></i>
   <img src={this.state.url} alt="bg" className="img"></img>
-  </div>
+  <Clock />
+  <Memo /> 
+ </React.Fragment>
   );
   }
 }
