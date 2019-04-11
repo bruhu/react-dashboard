@@ -6,7 +6,7 @@ export default class Umsplash extends Component {
 
   this.state = {
     pics: [],
-    url:"",
+    url:"https://images.unsplash.com/photo-1554748795-bb013b2fb701?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjY1OTI4fQ",
   };
 }
 componentDidMount() {
@@ -28,13 +28,18 @@ componentDidMount() {
     } 
 
  handelClick= (event) => { 
-   let x =this.state.pics[Math.floor((Math.random() * 10))]
-   alert("hiii")
-   this.setState({url:x})}
+   this.setState({url:this.state.pics[Math.floor((Math.random() * this.state.pics.length))]})
+   const divStyle = {
+    backgroundImage: 'url(' + this.state.url + ')',
+  };
+  
+  }
  
 render() {
-  return (
-  <img className="spinner" src="../img/spinner.svg" alt="spinner" onClick={this.handelClick} />
+  return ( <div>
+  <i className="fa fa-refresh fa-spin pointer" onClick={this.handelClick}></i>
+  <img src={this.state.url} alt="bg" className="img"></img>
+  </div>
   );
   }
 }

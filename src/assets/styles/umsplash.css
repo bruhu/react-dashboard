@@ -1,16 +1,9 @@
-.spinner {
-  animation: spinner-spin infinite 5s linear;
-  height: 10vmin;
-  pointer-events: none;
-  cursor: pointer;
-}
+.img{
+  width:100vw;
+  height: 100vh;
+  position:absolute;
+  z-index: -1;
+  top:0;
+  left:0
 
-@keyframes spinner-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
